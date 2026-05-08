@@ -4,6 +4,7 @@ import Component01Feed from "../imports/01Feed/01Feed";
 import BoxStart from "../imports/BoxStart/BoxStart";
 import BoxAnimation from "../imports/BoxAnimation/BoxAnimation";
 import FirstReward from "../imports/FirstReward/FirstReward";
+import SignUp from "../imports/SignUp/SignUp";
 
 type Screen = "feed" | "box-start" | "box-animation" | "first-reward" | "sign-up";
 
@@ -63,16 +64,14 @@ export default function App() {
             </motion.div>
           )}
 
-          {/* Sign Up — placeholder */}
+          {/* Sign Up */}
           {screen === "sign-up" && (
-            <motion.div key="sign-up" className="absolute inset-0 flex items-center justify-center"
+            <motion.div key="sign-up" className="absolute inset-0"
               initial={{ opacity: 0 }}
-              animate={{ opacity: 1, transition: { duration: 0.3 } }}
-              style={{ background: "#161616" }}
+              animate={{ opacity: 1, transition: { duration: 0.3, ease: [0, 0, 0.58, 1] } }}
+              exit={{ opacity: 0, transition: { duration: 0.25 } }}
             >
-              <p style={{ fontFamily: "'Russo One', sans-serif", fontSize: 18, color: "#6eff46", textAlign: "center" }}>
-                Sign Up screen…
-              </p>
+              <SignUp />
             </motion.div>
           )}
         </AnimatePresence>
