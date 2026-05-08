@@ -65,7 +65,7 @@ function CoinWidget({ onNavigate }: { onNavigate?: (screen: string) => void }) {
       if (p < 1) {
         rafRef.current = requestAnimationFrame(tick);
       } else {
-        onNavigate?.("next");
+        onNavigate?.("box-start");
       }
     };
     rafRef.current = requestAnimationFrame(tick);

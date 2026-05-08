@@ -1,8 +1,9 @@
 import { useState } from "react";
 import { AnimatePresence, motion } from "motion/react";
 import Component01Feed from "../imports/01Feed/01Feed";
+import BoxStart from "../imports/BoxStart/BoxStart";
 
-type Screen = "feed" | "next";
+type Screen = "feed" | "box-start" | "box-open";
 
 const FRAME_W = 360;
 
@@ -30,22 +31,34 @@ export default function App() {
             </motion.div>
           )}
 
-          {screen === "next" && (
+          {screen === "box-start" && (
             <motion.div
-              key="next"
-              className="absolute inset-0 flex items-center justify-center"
+              key="box-start"
+              className="absolute inset-0"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1, transition: { duration: 0.35, ease: [0, 0, 0.58, 1] } }}
+              exit={{ opacity: 0, transition: { duration: 0.25 } }}
+            >
+              <BoxStart onNavigate={navigate} />
+            </motion.div>
+          )}
+
+          {screen === "box-open" && (
+            <motion.div
+              key="box-open"
+              className="absolute inset-0 flex items-center justify-center"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1, transition: { duration: 0.35 } }}
               style={{ background: "#161616" }}
             >
-              {/* Заглушка — следующий экран будет добавлен позже */}
+              {/* Следующий экран — Box Opening */}
               <p style={{
                 fontFamily: "'Russo One', sans-serif",
                 fontSize: 18,
                 color: "#6eff46",
                 textAlign: "center",
               }}>
-                Next screen placeholder
+                Box opening screen…
               </p>
             </motion.div>
           )}
