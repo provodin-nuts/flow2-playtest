@@ -1,51 +1,75 @@
-const imgIconWatch   = "https://www.figma.com/api/mcp/asset/b022cf06-9905-4097-beb5-aca8eccba7a9";
-const imgIconCreate  = "https://www.figma.com/api/mcp/asset/7be1250c-b004-4e00-9a74-e25604eede74";
-const imgIconEarn    = "https://www.figma.com/api/mcp/asset/cd3b0eb4-4de4-40b2-a3d6-42c19a5527cc";
-const imgIconMarket  = "https://www.figma.com/api/mcp/asset/dc8ca80d-98d8-40c7-8b65-8096104c27f1";
-const imgIconProfile = "https://www.figma.com/api/mcp/asset/d12e21c5-12cf-4240-8d98-0a78caa35bd2";
+// Icons exported from Figma via REST API → S3 (работают без аутентификации в продакшне)
+const imgIconWatch   = "https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/efc47cb0-8e1f-4d84-93e9-4d7b2f2396cb";
+const imgIconCreate  = "https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/add7921c-600e-4a96-811e-0aa94c31c5eb";
+const imgIconEarn    = "https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/b1683456-868a-44b1-b0ac-504bd377aca2";
+const imgIconMarket  = "https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/090b779c-3bd1-4130-84f8-8412eb1c2055";
+const imgIconProfile = "https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/6bcf7a19-cd1c-4fd3-b923-4ddeada2bcd5";
 
 const TABS = [
-  { icon: imgIconWatch,   label: "Watch"   },
-  { icon: imgIconCreate,  label: "Create"  },
-  { icon: imgIconEarn,    label: "Earn"    },
-  { icon: imgIconMarket,  label: "Market"  },
-  { icon: imgIconProfile, label: "Profile" },
+  { icon: imgIconWatch,   label: "Watch",   active: true  },
+  { icon: imgIconCreate,  label: "Create",  active: false },
+  { icon: imgIconEarn,    label: "Earn",    active: false },
+  { icon: imgIconMarket,  label: "Market",  active: false },
+  { icon: imgIconProfile, label: "Profile", active: false },
 ];
-
-const ACTIVE_TAB = "Watch";
 
 export default function AlienTabBar() {
   return (
-    <div
-      className="flex flex-col items-start justify-end pt-[8px] rounded-tl-[28px] rounded-tr-[28px] w-full"
-      style={{ background: "rgba(22,22,22,0.85)", backdropFilter: "blur(10px)", WebkitBackdropFilter: "blur(10px)" }}
-    >
-      <div className="flex items-center w-full">
-        {TABS.map(({ icon, label }) => {
-          const isActive = label === ACTIVE_TAB;
-          return (
-            <div key={label} className="flex flex-1 flex-col gap-[2px] items-center min-w-0 py-[4px]">
-              <div className="relative shrink-0 size-[24px]" style={{ opacity: isActive ? 1 : 0.45 }}>
-                <img alt="" className="absolute block inset-0 max-w-none size-full" src={icon} />
-              </div>
-              <p style={{
-                fontFamily: "'Montserrat', sans-serif",
-                fontWeight: 500,
-                fontSize: 12,
-                lineHeight: "12px",
-                color: "#ffffff",
-                opacity: isActive ? 1 : 0.5,
-                textAlign: "center",
-                whiteSpace: "nowrap",
-              }}>
-                {label}
-              </p>
+    <div style={{
+      width: "100%",
+      flexShrink: 0,
+      display: "flex",
+      flexDirection: "column",
+    }}>
+      {/* 8px top padding (matches Figma Tabs frame offset) */}
+      <div style={{ paddingTop: 8, display: "flex", alignItems: "center", width: "100%" }}>
+        {TABS.map(({ icon, label, active }) => (
+          <div key={label} style={{
+            flex: 1,
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+            gap: 2,
+            paddingTop: 4,
+            paddingBottom: 4,
+            minWidth: 0,
+          }}>
+            <div style={{ width: 28, height: 28, flexShrink: 0, opacity: active ? 1 : 0.45 }}>
+              <img
+                alt={label}
+                src={icon}
+                style={{ display: "block", width: "100%", height: "100%", objectFit: "contain" }}
+              />
             </div>
-          );
-        })}
+            <p style={{
+              fontFamily: "'Montserrat', sans-serif",
+              fontWeight: 500,
+              fontSize: 12,
+              lineHeight: "12px",
+              color: "#ffffff",
+              opacity: active ? 1 : 0.5,
+              textAlign: "center",
+              whiteSpace: "nowrap",
+              margin: 0,
+            }}>
+              {label}
+            </p>
+          </div>
+        ))}
       </div>
-      <div className="h-[14px] relative w-full">
-        <div className="absolute bg-white h-[2px] left-1/2 -translate-x-1/2 rounded-[32px] top-[8px] w-[64px]" />
+
+      {/* Home indicator: 64×2 white pill, centered */}
+      <div style={{ height: 14, position: "relative", width: "100%" }}>
+        <div style={{
+          position: "absolute",
+          left: "50%",
+          top: 8,
+          transform: "translateX(-50%)",
+          width: 64,
+          height: 2,
+          borderRadius: 32,
+          background: "#ffffff",
+        }} />
       </div>
     </div>
   );
