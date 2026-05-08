@@ -39,7 +39,7 @@ function StatusBar() {
 export default function BoxStart({ onNavigate }: { onNavigate?: (screen: string) => void }) {
   return (
     <div
-      onClick={() => onNavigate?.("box-open")}
+      onClick={() => onNavigate?.("box-animation")}
       style={{
         position: "relative",
         width: "100%",
