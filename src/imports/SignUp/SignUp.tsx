@@ -3,7 +3,6 @@ const imgGoogle        = "https://figma-alpha-api.s3.us-west-2.amazonaws.com/ima
 const imgEmail         = "https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/072c1fb7-3b55-4e6b-b5aa-c58931a03dbd";
 const imgWhatsApp      = "https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/fb1a75dd-7296-4446-a629-5def07d22488";
 const imgCheckboxOn    = "https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/5afa733c-bf36-4a6d-bcc8-04d00416ed2f";
-const imgCheckboxOff   = "https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/5400270f-7521-45e2-bd6f-e39d4a44489e";
 
 const imgAndroidBluetooth      = "https://www.figma.com/api/mcp/asset/57dc6fb8-c18e-4479-a70c-a718b54867ae";
 const imgAndroidWiFi           = "https://www.figma.com/api/mcp/asset/f0c53ec5-6271-459f-af4d-ade0406cfbb3";
@@ -152,27 +151,6 @@ export default function SignUp() {
           </p>
         </div>
 
-        {/* gap: 10px (checkbox 1 bottom y=710 → checkbox 2 y=720) */}
-        <div style={{ height: 10 }} />
-
-        {/* Checkbox 2 — unchecked */}
-        <div style={{ display: "flex", alignItems: "flex-start", gap: 8 }}>
-          <img
-            alt=""
-            src={imgCheckboxOff}
-            style={{ width: 24, height: 24, flexShrink: 0, marginTop: 1 }}
-          />
-          <p style={{
-            fontFamily: "'Montserrat', sans-serif",
-            fontWeight: 500,
-            fontSize: 12,
-            lineHeight: "14px",
-            color: "#ffffff",
-            margin: 0,
-          }}>
-            Принимаю согласие на получение рекламных рассылок
-          </p>
-        </div>
       </div>
     </div>
   );

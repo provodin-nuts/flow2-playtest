@@ -1,9 +1,8 @@
 import { useEffect } from "react";
 import AlienTabBar from "../shared/AlienTabBar";
 
-// Full-screen glow explosion — 1400x1400 glow covers entire screen
 // Auto-navigates to "first-reward" after 800ms (Figma: After delay 800ms → First reward)
-const imgGlow = "https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/f92d6902-bf03-402b-bbd4-62fa662e1121";
+const imgGlow = "/img/explosion.webp";
 
 const imgAndroidBluetooth      = "https://www.figma.com/api/mcp/asset/57dc6fb8-c18e-4479-a70c-a718b54867ae";
 const imgAndroidWiFi           = "https://www.figma.com/api/mcp/asset/f0c53ec5-6271-459f-af4d-ade0406cfbb3";
@@ -47,17 +46,16 @@ export default function BoxAnimation({ onNavigate }: { onNavigate?: (screen: str
     }}>
       <StatusBar />
 
-      {/* Glow: 1400×1400 centered, covers entire screen — overflow hidden on parent */}
+      {/* Explosion: fills screen, maintains aspect ratio, animates from center */}
       <img
         alt=""
         src={imgGlow}
         style={{
           position: "absolute",
-          width: 1400,
-          height: 1400,
-          left: "50%",
-          top: "50%",
-          transform: "translate(-50%, -50%)",
+          inset: 0,
+          width: "100%",
+          height: "100%",
+          objectFit: "contain",
           pointerEvents: "none",
           animation: "glowExplode 1.2s cubic-bezier(0,0,0.42,1) forwards",
         }}
@@ -70,8 +68,8 @@ export default function BoxAnimation({ onNavigate }: { onNavigate?: (screen: str
 
       <style>{`
         @keyframes glowExplode {
-          from { opacity: 0; transform: translate(-50%, -50%) scale(0.29); }
-          to   { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+          from { opacity: 0; transform: scale(0.3); }
+          to   { opacity: 1; transform: scale(1); }
         }
       `}</style>
     </div>

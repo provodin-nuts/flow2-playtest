@@ -163,7 +163,7 @@ export default function FirstReward({ onNavigate }: { onNavigate?: (screen: stri
             borderRadius: 20,
             border: "none",
             cursor: "pointer",
-            background: "radial-gradient(ellipse at 25% 50%, #ffffff 0%, #a4ff8b 55%, #ff9ff7 90%)",
+            background: "radial-gradient(ellipse at 0% 100%, #ffffff 20%, #a3ff8b 60%, #ff9ff7 90%)",
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
