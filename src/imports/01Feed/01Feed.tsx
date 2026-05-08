@@ -57,7 +57,7 @@ function CoinWidget({ onNavigate }: { onNavigate?: (screen: string) => void }) {
   const rafRef   = useRef<number>(0);
 
   useEffect(() => {
-    const DURATION = 12_000;
+    const DURATION = 6_000;
     const tick = (ts: number) => {
       if (startRef.current === null) startRef.current = ts;
       const p = Math.min((ts - startRef.current) / DURATION, 1);

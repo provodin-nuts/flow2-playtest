@@ -6,7 +6,7 @@ function PurchaseHistory() {
   return (
     <div className="content-stretch flex items-end relative shrink-0" data-name="Purchase History">
       <div className="flex flex-col font-['Russo_One:Regular',sans-serif] justify-center leading-[0] not-italic relative shrink-0 text-[#b9b9b9] text-[14px] tracking-[0.14px] whitespace-nowrap">
-        <p className="leading-[16px]">История</p>
+        <p className="leading-[16px]">History</p>
       </div>
       <div className="relative shrink-0 size-[16px]" data-name="x / Disclosure">
         <div className="absolute inset-[20%_29.71%_20%_35%]" data-name="vector">
@@ -22,7 +22,7 @@ function PurchaseHistory() {
 function Top() {
   return (
     <div className="content-stretch flex items-center justify-between relative shrink-0 w-full" data-name="Top">
-      <p className="font-['Russo_One:Regular',sans-serif] leading-[24px] not-italic relative shrink-0 text-[20px] text-white tracking-[0.2px] whitespace-nowrap">Бусты</p>
+      <p className="font-['Russo_One:Regular',sans-serif] leading-[24px] not-italic relative shrink-0 text-[20px] text-white tracking-[0.2px] whitespace-nowrap">Boosts</p>
       <PurchaseHistory />
     </div>
   );
@@ -55,7 +55,7 @@ function ProgressBar() {
 function Value() {
   return (
     <div className="content-stretch flex items-center relative shrink-0" data-name="Value">
-      <p className="font-['Russo_One:Regular',sans-serif] leading-[16px] not-italic relative shrink-0 text-[14px] text-white tracking-[0.14px] whitespace-nowrap">50% готово</p>
+      <p className="font-['Russo_One:Regular',sans-serif] leading-[16px] not-italic relative shrink-0 text-[14px] text-white tracking-[0.14px] whitespace-nowrap">50% done</p>
     </div>
   );
 }
@@ -63,7 +63,7 @@ function Value() {
 function Top1() {
   return (
     <div className="content-stretch flex flex-col gap-[4px] items-start justify-end relative shrink-0 w-full" data-name="Top">
-      <p className="font-['Montserrat:Medium',sans-serif] leading-[14px] min-w-full not-italic relative shrink-0 text-[12px] text-white tracking-[0.06px] w-[min-content]">Буст заработка</p>
+      <p className="font-['Montserrat:Medium',sans-serif] leading-[14px] min-w-full not-italic relative shrink-0 text-[12px] text-white tracking-[0.06px] w-[min-content]">Earning boost</p>
       <ProgressBar />
       <Value />
     </div>
@@ -79,7 +79,7 @@ function Content() {
           <div className="h-[32px] relative rounded-[12px] shrink-0 w-full" style={{ backgroundImage: "url('data:image/svg+xml;utf8,<svg viewBox=\\'0 0 174 32\\' xmlns=\\'http://www.w3.org/2000/svg\\' preserveAspectRatio=\\'none\\'><rect x=\\'0\\' y=\\'0\\' height=\\'100%\\' width=\\'100%\\' fill=\\'url(%23grad)\\' opacity=\\'1\\'/><defs><radialGradient id=\\'grad\\' gradientUnits=\\'userSpaceOnUse\\' cx=\\'0\\' cy=\\'0\\' r=\\'10\\' gradientTransform=\\'matrix(17.4 -3.2 10.06 6.504 -0.0000051856 32)\\'><stop stop-color=\\'rgba(255,255,255,1)\\' offset=\\'0.2\\'/><stop stop-color=\\'rgba(210,255,197,1)\\' offset=\\'0.4\\'/><stop stop-color=\\'rgba(164,255,139,1)\\' offset=\\'0.6\\'/><stop stop-color=\\'rgba(210,207,193,1)\\' offset=\\'0.75\\'/><stop stop-color=\\'rgba(255,159,247,1)\\' offset=\\'0.9\\'/></radialGradient></defs></svg>')" }} data-name="Button">
             <div className="flex flex-row items-center justify-center size-full">
               <div className="content-stretch flex items-center justify-center px-[16px] py-[10px] relative size-full">
-                <p className="font-['Russo_One:Regular',sans-serif] leading-[12px] not-italic relative shrink-0 text-[10px] text-black text-center tracking-[0.8px] uppercase whitespace-nowrap">активировать</p>
+                <p className="font-['Russo_One:Regular',sans-serif] leading-[12px] not-italic relative shrink-0 text-[10px] text-black text-center tracking-[0.8px] uppercase whitespace-nowrap">ACTIVATE</p>
               </div>
             </div>
           </div>
@@ -116,7 +116,7 @@ function ProgressBar1() {
 function Value1() {
   return (
     <div className="content-stretch flex items-center relative shrink-0" data-name="Value">
-      <p className="font-['Russo_One:Regular',sans-serif] leading-[16px] not-italic relative shrink-0 text-[14px] text-white tracking-[0.14px] whitespace-nowrap">100% готово</p>
+      <p className="font-['Russo_One:Regular',sans-serif] leading-[16px] not-italic relative shrink-0 text-[14px] text-white tracking-[0.14px] whitespace-nowrap">100% done</p>
     </div>
   );
 }
@@ -124,7 +124,7 @@ function Value1() {
 function Top2() {
   return (
     <div className="content-stretch flex flex-col gap-[4px] items-start justify-end opacity-50 relative shrink-0 w-full" data-name="Top">
-      <p className="font-['Montserrat:Medium',sans-serif] leading-[14px] min-w-full not-italic relative shrink-0 text-[12px] text-white tracking-[0.06px] w-[min-content]">Буст заработка</p>
+      <p className="font-['Montserrat:Medium',sans-serif] leading-[14px] min-w-full not-italic relative shrink-0 text-[12px] text-white tracking-[0.06px] w-[min-content]">Earning boost</p>
       <ProgressBar1 />
       <Value1 />
     </div>
@@ -140,7 +140,7 @@ function Content1() {
           <div className="h-[32px] opacity-50 relative shrink-0 w-full" data-name="Button">
             <div className="flex flex-row items-center justify-center size-full">
               <div className="content-stretch flex items-center justify-center px-[16px] py-[10px] relative size-full">
-                <p className="font-['Russo_One:Regular',sans-serif] leading-[12px] not-italic relative shrink-0 text-[#b9b9b9] text-[10px] text-center tracking-[0.8px] uppercase whitespace-nowrap">Истек</p>
+                <p className="font-['Russo_One:Regular',sans-serif] leading-[12px] not-italic relative shrink-0 text-[#b9b9b9] text-[10px] text-center tracking-[0.8px] uppercase whitespace-nowrap">Expired</p>
               </div>
             </div>
           </div>

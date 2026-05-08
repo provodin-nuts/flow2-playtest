@@ -27,7 +27,7 @@ function ProgressBar() {
 function Value() {
   return (
     <div className="content-stretch flex items-center relative shrink-0" data-name="Value">
-      <p className="font-['Russo_One:Regular',sans-serif] leading-[16px] not-italic relative shrink-0 text-[14px] text-white tracking-[0.14px] whitespace-nowrap">100% готово</p>
+      <p className="font-['Russo_One:Regular',sans-serif] leading-[16px] not-italic relative shrink-0 text-[14px] text-white tracking-[0.14px] whitespace-nowrap">100% done</p>
     </div>
   );
 }
@@ -35,7 +35,7 @@ function Value() {
 function Top() {
   return (
     <div className="content-stretch flex flex-col gap-[4px] items-start justify-end opacity-50 relative shrink-0 w-full" data-name="Top">
-      <p className="font-['Montserrat:Medium',sans-serif] leading-[14px] min-w-full not-italic relative shrink-0 text-[12px] text-white tracking-[0.06px] w-[min-content]">Буст заработка</p>
+      <p className="font-['Montserrat:Medium',sans-serif] leading-[14px] min-w-full not-italic relative shrink-0 text-[12px] text-white tracking-[0.06px] w-[min-content]">Earning boost</p>
       <ProgressBar />
       <Value />
     </div>
@@ -51,7 +51,7 @@ function Content() {
           <div className="h-[32px] opacity-50 relative shrink-0 w-full" data-name="Button">
             <div className="flex flex-row items-center justify-center size-full">
               <div className="content-stretch flex items-center justify-center px-[16px] py-[10px] relative size-full">
-                <p className="font-['Russo_One:Regular',sans-serif] leading-[12px] not-italic relative shrink-0 text-[#b9b9b9] text-[10px] text-center tracking-[0.8px] uppercase whitespace-nowrap">Истек</p>
+                <p className="font-['Russo_One:Regular',sans-serif] leading-[12px] not-italic relative shrink-0 text-[#b9b9b9] text-[10px] text-center tracking-[0.8px] uppercase whitespace-nowrap">Expired</p>
               </div>
             </div>
           </div>

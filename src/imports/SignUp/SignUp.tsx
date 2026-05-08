@@ -86,7 +86,7 @@ export default function SignUp() {
           textAlign: "center",
           margin: 0,
         }}>
-          Войди или зарегистрируйся, чтобы продолжить
+          Sign in or register to continue
         </p>
 
         {/* gap: 24px (label bottom y=549 → buttons y=573) */}
@@ -147,7 +147,7 @@ export default function SignUp() {
             color: "#ffffff",
             margin: 0,
           }}>
-            Я соглашаюсь с пользовательским соглашением, условиями использования и Политикой конфиденциальности
+            I agree with the user agreement, terms of use and Privacy Policy
           </p>
         </div>
 

@@ -4,7 +4,7 @@ function Text() {
   return (
     <div className="content-stretch flex flex-[1_0_0] flex-col gap-[2px] items-start min-w-px not-italic relative text-white" data-name="Text">
       <p className="font-['Russo_One:Regular',sans-serif] leading-[20px] overflow-hidden relative shrink-0 text-[16px] text-ellipsis tracking-[0.16px] w-full">ALPHA MODE</p>
-      <p className="font-['Montserrat:Medium',sans-serif] leading-[16px] overflow-hidden relative shrink-0 text-[14px] text-ellipsis tracking-[0.14px] w-full">Всё лучшее — в одной подписке</p>
+      <p className="font-['Montserrat:Medium',sans-serif] leading-[16px] overflow-hidden relative shrink-0 text-[14px] text-ellipsis tracking-[0.14px] w-full">All the best — in one subscription</p>
     </div>
   );
 }
@@ -21,8 +21,8 @@ function Left() {
 function LabelContent() {
   return (
     <div className="content-stretch flex flex-col gap-[2px] items-start not-italic relative shrink-0 text-white w-full" data-name="Label Content">
-      <p className="font-['Russo_One:Regular',sans-serif] leading-[24px] relative shrink-0 text-[20px] tracking-[0.2px] w-full">{`Больше дохода `}</p>
-      <p className="font-['Montserrat:Medium',sans-serif] leading-[16px] min-h-[48px] relative shrink-0 text-[14px] tracking-[0.14px] w-full">активируй буст заработка</p>
+      <p className="font-['Russo_One:Regular',sans-serif] leading-[24px] relative shrink-0 text-[20px] tracking-[0.2px] w-full">{`More income `}</p>
+      <p className="font-['Montserrat:Medium',sans-serif] leading-[16px] min-h-[48px] relative shrink-0 text-[14px] tracking-[0.14px] w-full">activate earning boost</p>
     </div>
   );
 }
@@ -30,8 +30,8 @@ function LabelContent() {
 function LabelContent1() {
   return (
     <div className="content-stretch flex flex-col gap-[2px] items-start not-italic relative shrink-0 text-white w-full" data-name="Label Content">
-      <p className="font-['Russo_One:Regular',sans-serif] leading-[20px] relative shrink-0 text-[16px] tracking-[0.16px] w-full">Награды за задания</p>
-      <p className="font-['Montserrat:Medium',sans-serif] leading-[16px] min-h-[48px] relative shrink-0 text-[14px] tracking-[0.14px] w-full">выполняй задания за награды</p>
+      <p className="font-['Russo_One:Regular',sans-serif] leading-[20px] relative shrink-0 text-[16px] tracking-[0.16px] w-full">Task rewards</p>
+      <p className="font-['Montserrat:Medium',sans-serif] leading-[16px] min-h-[48px] relative shrink-0 text-[14px] tracking-[0.14px] w-full">complete tasks for rewards</p>
     </div>
   );
 }
@@ -75,8 +75,8 @@ function Left1() {
 function LabelContent2() {
   return (
     <div className="content-stretch flex flex-col gap-[2px] items-start not-italic relative shrink-0 text-white w-full" data-name="Label Content">
-      <p className="font-['Russo_One:Regular',sans-serif] leading-[20px] relative shrink-0 text-[16px] tracking-[0.16px] w-full">До $15 за друга</p>
-      <p className="font-['Montserrat:Medium',sans-serif] leading-[16px] min-h-[48px] relative shrink-0 text-[14px] tracking-[0.14px] w-full">приглашай — зарабатывай</p>
+      <p className="font-['Russo_One:Regular',sans-serif] leading-[20px] relative shrink-0 text-[16px] tracking-[0.16px] w-full">Up to $15 per friend</p>
+      <p className="font-['Montserrat:Medium',sans-serif] leading-[16px] min-h-[48px] relative shrink-0 text-[14px] tracking-[0.14px] w-full">invite — earn</p>
     </div>
   );
 }
@@ -84,10 +84,10 @@ function LabelContent2() {
 function LabelContent3() {
   return (
     <div className="content-stretch flex flex-col gap-[2px] items-start not-italic relative shrink-0 text-white w-full" data-name="Label Content">
-      <p className="font-['Russo_One:Regular',sans-serif] leading-[20px] relative shrink-0 text-[16px] tracking-[0.16px] w-full">Поделись и заработай</p>
+      <p className="font-['Russo_One:Regular',sans-serif] leading-[20px] relative shrink-0 text-[16px] tracking-[0.16px] w-full">Share and earn</p>
       <p className="font-['Montserrat:Medium',sans-serif] leading-[16px] min-h-[48px] relative shrink-0 text-[14px] tracking-[0.14px] w-full whitespace-pre-wrap">
-        {`выложи stories `}
-        <br aria-hidden="true" />и увеличь заработок
+        {`post stories `}
+        <br aria-hidden="true" />and boost your earnings
       </p>
     </div>
   );
@@ -141,7 +141,7 @@ function BottomSheet() {
   return (
     <div className="-translate-x-1/2 absolute backdrop-blur-[50px] bg-gradient-to-b bottom-0 content-stretch flex flex-col from-[#323232] gap-[20px] items-center justify-end left-1/2 pb-[32px] pt-[8px] rounded-tl-[28px] rounded-tr-[28px] to-[#161616] to-[30%] w-[360px]" data-name="Bottom Sheet">
       <div className="bg-[rgba(171,155,253,0.15)] h-[4px] rounded-[40px] shrink-0 w-[52px]" data-name="Drawer" />
-      <p className="font-['Russo_One:Regular',sans-serif] leading-[24px] not-italic relative shrink-0 text-[20px] text-center text-white tracking-[0.2px] whitespace-nowrap">Больше заработка</p>
+      <p className="font-['Russo_One:Regular',sans-serif] leading-[24px] not-italic relative shrink-0 text-[20px] text-center text-white tracking-[0.2px] whitespace-nowrap">More earnings</p>
       <div className="content-stretch flex gap-[8px] items-center p-[16px] relative rounded-[20px] shrink-0 w-[328px]" style={{ backgroundImage: "linear-gradient(142.847deg, rgba(110, 255, 70, 0.7) 0%, rgba(110, 255, 70, 0.3) 100%)" }} data-name="Big Banner">
         <Text />
         <div className="bg-gradient-to-b content-stretch drop-shadow-[0px_2px_4px_rgba(0,0,0,0.2)] flex from-[rgba(255,255,255,0.1)] gap-[6px] items-center pl-[4px] pr-[8px] py-[4px] relative rounded-[12px] shrink-0 to-[rgba(255,255,255,0.3)]" data-name="Subscription">
@@ -152,7 +152,7 @@ function BottomSheet() {
       </div>
       <Blocks />
       <div className="content-stretch flex h-[52px] items-center justify-center overflow-clip px-[16px] py-[20px] relative rounded-[20px] shrink-0 w-[328px]" style={{ backgroundImage: "url('data:image/svg+xml;utf8,<svg viewBox=\\'0 0 328 52\\' xmlns=\\'http://www.w3.org/2000/svg\\' preserveAspectRatio=\\'none\\'><rect x=\\'0\\' y=\\'0\\' height=\\'100%\\' width=\\'100%\\' fill=\\'url(%23grad)\\' opacity=\\'1\\'/><defs><radialGradient id=\\'grad\\' gradientUnits=\\'userSpaceOnUse\\' cx=\\'0\\' cy=\\'0\\' r=\\'10\\' gradientTransform=\\'matrix(32.8 -5.2 18.963 10.569 -0.0000097752 52)\\'><stop stop-color=\\'rgba(255,255,255,1)\\' offset=\\'0.2\\'/><stop stop-color=\\'rgba(210,255,197,1)\\' offset=\\'0.4\\'/><stop stop-color=\\'rgba(164,255,139,1)\\' offset=\\'0.6\\'/><stop stop-color=\\'rgba(210,207,193,1)\\' offset=\\'0.75\\'/><stop stop-color=\\'rgba(255,159,247,1)\\' offset=\\'0.9\\'/></radialGradient></defs></svg>')" }} data-name="Button">
-        <p className="font-['Russo_One:Regular',sans-serif] leading-[16px] not-italic relative shrink-0 text-[#161616] text-[12px] text-center tracking-[0.72px] uppercase whitespace-nowrap">ок</p>
+        <p className="font-['Russo_One:Regular',sans-serif] leading-[16px] not-italic relative shrink-0 text-[#161616] text-[12px] text-center tracking-[0.72px] uppercase whitespace-nowrap">OK</p>
       </div>
     </div>
   );
