@@ -1,18 +1,21 @@
 import { useState } from "react";
 import { AnimatePresence, motion } from "motion/react";
-import Component01Feed from "../imports/01Feed/01Feed";
-import BoxStart from "../imports/BoxStart/BoxStart";
-import BoxAnimation from "../imports/BoxAnimation/BoxAnimation";
-import FirstReward from "../imports/FirstReward/FirstReward";
-import SignUp from "../imports/SignUp/SignUp";
+import MarketScreen from "../imports/MarketScreen/MarketScreen";
+import BoostDetail from "../imports/BoostDetail/BoostDetail";
 
-type Screen = "feed" | "box-start" | "box-animation" | "first-reward" | "sign-up";
+type BoostType = "standard" | "prime" | "elite";
+type Screen = "market" | "boost-detail";
 
 const FRAME_W = 360;
 
 export default function App() {
-  const [screen, setScreen] = useState<Screen>("feed");
-  const navigate = (s: string) => setScreen(s as Screen);
+  const [screen, setScreen] = useState<Screen>("market");
+  const [selectedBoost, setSelectedBoost] = useState<BoostType>("standard");
+
+  const openBoost = (boost: BoostType) => {
+    setSelectedBoost(boost);
+    setScreen("boost-detail");
+  };
 
   return (
     <div className="size-full flex items-center justify-center bg-[#0a0a0a]" style={{ height: "100dvh" }}>
@@ -21,57 +24,27 @@ export default function App() {
         style={{ width: "100%", maxWidth: FRAME_W, height: "100dvh", background: "#000" }}
       >
         <AnimatePresence mode="wait">
-          {/* Feed */}
-          {screen === "feed" && (
-            <motion.div key="feed" className="absolute inset-0"
-              initial={{ opacity: 1 }} animate={{ opacity: 1 }}
-              exit={{ opacity: 0, transition: { duration: 0.35, ease: [0, 0, 0.58, 1] } }}
-            >
-              <Component01Feed onNavigate={navigate} />
-            </motion.div>
-          )}
-
-          {/* Box Start — "Tap to open" */}
-          {screen === "box-start" && (
-            <motion.div key="box-start" className="absolute inset-0"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1, transition: { duration: 0.35, ease: [0, 0, 0.58, 1] } }}
+          {screen === "market" && (
+            <motion.div
+              key="market"
+              className="absolute inset-0"
+              initial={{ opacity: 1 }}
+              animate={{ opacity: 1 }}
               exit={{ opacity: 0, transition: { duration: 0.25 } }}
             >
-              <BoxStart onNavigate={navigate} />
+              <MarketScreen onBoostClick={openBoost} />
             </motion.div>
           )}
 
-          {/* Box Animation — glow explosion, auto-navigates after 800ms */}
-          {screen === "box-animation" && (
-            <motion.div key="box-animation" className="absolute inset-0"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1, transition: { duration: 0.15 } }}
-              exit={{ opacity: 0, transition: { duration: 0.3, ease: [0, 0, 0.58, 1] } }}
+          {screen === "boost-detail" && (
+            <motion.div
+              key="boost-detail"
+              className="absolute inset-0"
+              initial={{ x: "100%", opacity: 0 }}
+              animate={{ x: 0, opacity: 1, transition: { duration: 0.3, ease: [0.25, 0.46, 0.45, 0.94] } }}
+              exit={{ x: "100%", opacity: 0, transition: { duration: 0.25 } }}
             >
-              <BoxAnimation onNavigate={navigate} />
-            </motion.div>
-          )}
-
-          {/* First Reward — Sign up screen */}
-          {screen === "first-reward" && (
-            <motion.div key="first-reward" className="absolute inset-0"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1, transition: { duration: 0.3, ease: [0, 0, 0.58, 1] } }}
-              exit={{ opacity: 0, transition: { duration: 0.25 } }}
-            >
-              <FirstReward onNavigate={navigate} />
-            </motion.div>
-          )}
-
-          {/* Sign Up */}
-          {screen === "sign-up" && (
-            <motion.div key="sign-up" className="absolute inset-0"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1, transition: { duration: 0.3, ease: [0, 0, 0.58, 1] } }}
-              exit={{ opacity: 0, transition: { duration: 0.25 } }}
-            >
-              <SignUp />
+              <BoostDetail boost={selectedBoost} onBack={() => setScreen("market")} />
             </motion.div>
           )}
         </AnimatePresence>
